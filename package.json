@@ -1,0 +1,24 @@
+{
+  "name": "angular_serbia",
+  "version": "1.0.0",
+  "description": "Angular Serbia Blog",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/nikolapervic/angular_serbia.git"
+  },
+  "keywords": [
+    "AngularJS",
+    "Firebase",
+    "Materialize"
+  ],
+  "author": "Nikola Pervic",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/nikolapervic/angular_serbia#readme",
+  "devDependencies": {
+    "webpack": "^3.6.0"
+  }
+}
