@@ -8,6 +8,7 @@ The project uses webpack@3.6.0 and angularJS@1.6.6. It has webpack setup for sty
 
 
 ### Setup ###
+(You need to have NodeJS installed to run this project)
 
 * Set up node_modules
 
@@ -16,7 +17,7 @@ Fork the repo and run "npm install" in ./
 ```node
 npm install
 ```
-* Scripts
+### Scripts ###
 
 The project builds the /dist dir and the projects assets using "build"
 
@@ -41,7 +42,8 @@ Start the webpack dev server using "build".(Note that running this command will 
 ```node
 npm run build
 ```
-* Dependencies
+
+### Dependencies ###
 
 ```JavaScript
 "devDependencies": {
@@ -67,7 +69,7 @@ npm run build
 }
 ```
 
-* Deployment instructions
+### Deployment instructions ###
 
 Todo
 
