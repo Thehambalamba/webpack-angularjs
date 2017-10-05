@@ -8,9 +8,8 @@ The project uses webpack@3.6.0 and angularJS@1.6.6. It has webpack setup for sty
 
 
 ### Setup ###
-(You need to have NodeJS installed to run this project)
 
-* Set up node_modules
+You need to have NodeJS installed to run this project
 
 Fork the repo and run "npm install" in ./
 
