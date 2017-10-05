@@ -4,16 +4,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
-    filename: "[name].[contenthash].css",
-    disable: process.env.NODE_ENV === "development"
+  filename: "[name].[contenthash].css",
+  disable: process.env.NODE_ENV === "development"
 });
 
 const config = {
   entry: './src/index.js',
+  // alow source-maping
   devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
@@ -52,7 +56,7 @@ const config = {
     extractSass,
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-       title: 'Output Management'
+      title: 'NG-SRBIJA',
     })
   ]
 };
