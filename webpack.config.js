@@ -1,23 +1,29 @@
+const webpack = require('webpack');
 const path = require('path');
+
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
   filename: "[name].[contenthash].css",
-  disable: process.env.NODE_ENV === "development"
 });
 
+const VENDOR_LIBS = [
+  'angular'
+];
+
 const config = {
-  entry: './src/index.js',
-  // alow source-maping
+  entry: {
+    bundle: './src/app/app.js',
+    vendor: VENDOR_LIBS
+  },
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].[chunkhash].js',
   },
   module: {
     rules: [
@@ -49,14 +55,21 @@ const config = {
          use: [
            'file-loader'
          ]
-       }
+       },
+       {
+          test: /\.html$/,
+          loader: 'raw-loader'
+        }
     ]
   },
   plugins: [
     extractSass,
-    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'NG-SRBIJA',
+      template: 'src/public/index.html',
+      title: 'webpack-angularjs',
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor', 'manifest']
     })
   ]
 };
