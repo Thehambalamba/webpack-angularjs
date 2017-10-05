@@ -2,7 +2,7 @@
 node_modules
 
 # production code
-dist
+/dist
 
 # production code
 .jshintrc
