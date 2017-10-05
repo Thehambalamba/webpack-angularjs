@@ -1,4 +1,4 @@
-# Webpack AngularJs #
+# Webpack AngularJS #
 
 ### What is this repository for? ###
 
